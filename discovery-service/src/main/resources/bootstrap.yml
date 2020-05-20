@@ -1,0 +1,14 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: discovery-service
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8888
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, env

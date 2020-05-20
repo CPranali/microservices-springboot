@@ -1,0 +1,7 @@
+message: Hello-world
+server:
+  port: 9090
+eureka:
+  client:
+    serviceUrl:
+      defaultzone: http://localhost:8761/eureka

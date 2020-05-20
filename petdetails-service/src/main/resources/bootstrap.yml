@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: petdetails-service
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8888
+message: hello
+
+

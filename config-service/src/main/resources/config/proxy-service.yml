@@ -1,0 +1,29 @@
+server:
+  port: 8762
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+#Disable accessing services using service name, they should access by below specified path
+zuul:
+  routes:
+    petshop:
+      path: /petshop/**
+      service-id: petshop-service
+    petdetails:
+      service-id: petdetails-service
+    auth:
+     path: /auth/**
+     service-id: auth-service
+     strip-prefix: false
+     sensitive-headers: Cookie,Set-Cookie
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 40000
+ribbon:
+  ConnectTimeout: 10000
+  ReadTimeout: 10000
